@@ -6,7 +6,11 @@ def kMedoids(D, k, tmax=100):
     m, n = D.shape
 
     # randomly initialize an array of k medoid indices
-    M = np.sort(np.random.choice(n, k))
+    # Repeate until all medoids are different
+    while(True):
+        M = np.sort(np.random.choice(n, k))
+        if not np.equal.reduce(M):
+            break
 
     # create a copy of the array of medoid indices
     Mnew = np.copy(M)

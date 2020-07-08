@@ -3,7 +3,9 @@ import random
 
 def kMedoids(D, k, tmax=100):
     # determine dimensions of distance matrix D
+    print(D)
     m, n = D.shape
+    
 
     if k > n:
         raise Exception('too many medoids')
